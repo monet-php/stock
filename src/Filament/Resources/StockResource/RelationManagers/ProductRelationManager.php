@@ -95,7 +95,8 @@ class ProductRelationManager extends RelationManager
                 Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
-                Tables\Actions\DetachBulkAction::make()
+                Tables\Actions\DetachBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()
             ]);
     }
 }
