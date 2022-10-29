@@ -1,0 +1,74 @@
+{
+    "name": "monet-php/stock",
+    "description": "Add stock management to your Monet CMS.",
+    "version": "0.1",
+    "keywords": [
+        "monet",
+        "laravel",
+        "stock"
+    ],
+    "homepage": "https://github.com/monet-php/stock",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "aws/aws-sdk-php": "^3.240",
+        "barryvdh/laravel-snappy": "^1.0",
+        "lifewatch/wkhtmltopdf-windows": "^0.12.6",
+        "olsgreen/wkhtmltopdf-amd64": "^0.12.6"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "monet-php/framework": "dev-main",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "replace": {
+        "laravel/framework": "*",
+        "illuminate/filesystem": "*",
+        "illuminate/support": "*",
+        "monet-php/framework": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Monet\\Stock\\": "src",
+            "Monet\\Stock\\Seeders\\": "database/seeders"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Monet\\Stock\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "monet": {
+            "module": {
+                "providers": [
+                    "Monet\\Stock\\StockServiceProvider"
+                ]
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,68 @@
+@import 'modern-normalize/modern-normalize.css';
+
+body {
+    font-family: 'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+}
+
+table {
+    page-break-inside: auto;
+    width: 100%;
+}
+
+tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tfoot {
+    display: table-footer-group;
+}
+
+.header {
+    width: 100%;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.header h2 {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.header p {
+    text-align: center;
+    font-size: 13px;
+}
+
+table, tr, td {
+    text-align: center;
+    border: 2px solid black;
+}
+
+th {
+    font-weight: 700;
+    font-size: 18px;
+    background: black;
+    color: white;
+}
+
+th, td {
+    padding: .5rem;
+}
